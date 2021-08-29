@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobsNET - Recrutamento e seleção de profissionais</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img class="logo" src="images/logo-jobsnet.png" alt="JobsNET - Recrutamento e seleção de profissionais" />
+  </header>
+  <main>
+    <div>
+      <h1 class="title"> Cadastre seu currículo!</h1>
+      <p class="subtitle">
+        Preencha os dados abaixo, e logo entraremos em contato!
+      </p>
+      <div class="alert alert-success d-none" role="alert">
+        Seu currículo foi enviado com sucesso!
+      </div>
+      <div class="container px-5 my-5">
+        <form method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label><b>Dados Pessoais</b></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="nome_completo" id="nomeCompleto" type="text" placeholder="Nome Completo" data-sb-validations="required" />
+                <label for="nomeCompleto">Nome Completo<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="nomeCompleto:required">Nome Completo é obrigatório.</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="cargo" id="cargoPretendido" type="text" placeholder="Cargo Pretendido" data-sb-validations="required" />
+                <label for="cargoPretendido">Cargo Pretendido/Profissão<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="cargoPretendido:required">Cargo Pretendido/Profissão é obrigatório.</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="data_nascimento" id="dataNascimento" type="date" placeholder="Data de Nascimento*" data-sb-validations="required" />
+                <label for="dataNascimento">Data de Nascimento<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="dataNascimento:required">Data de Nascimento é obrigatório.</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <select class="form-select" name="estado_civil" id="estadoCivil" aria-label="Estado Cívil">
+                  <option value="nao-informado">Prefiro não informar</option>
+                  <option value="solteiro">Solteiro(a)</option>
+                  <option value="casado">Casado(a)</option>
+                  <option value="divorciado">Divorciado(a)</option>
+                  <option value="separado">Separado(a)</option>
+                </select>
+                <label for="estadoCivil">Estado Cívil</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <select class="form-select" name="sexo" id="sexo" aria-label="Sexo">
+                  <option value="nao-informado">Prefiro não informar</option>
+                  <option value="feminino">Feminino</option>
+                  <option value="masculino">Masculino</option>
+                </select>
+                <label for="sexo">Sexo</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" id="cep" type="text" placeholder="CEP*" data-sb-validations="required" />
+                <label for="cep">CEP<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="cep:required">CEP é obrigatório.</div>
+              </div>
+            </div>
+            <div class="col col-8">
+              <div class="form-floating mb-2">
+                <input class="form-control" name="logradouro" id="endereco" type="text" placeholder="Endereço*" data-sb-validations="required" />
+                <label for="endereco">Endereço<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="endereco:required">Endereço é obrigatório</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-4">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="numero" id="numero" type="text" placeholder="Número*" data-sb-validations="required" />
+                <label for="bairro">Número<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="numero:required">Número é obrigatório.</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="complemento" id="complemento" type="text" placeholder="Complemento"/>
+                <label for="complemento">Complemento</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="bairro" id="bairro" type="text" placeholder="Bairro*" data-sb-validations="required" />
+                <label for="bairro">Bairro<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="bairro:required">Bairro é obrigatório.</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="cidade" id="cidade" type="text" placeholder="Cidade*" data-sb-validations="required" />
+                <label for="cidade">Cidade<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="cidade:required">Cidade é obrigatório.</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="estado" id="estado" type="text" placeholder="Estado*" data-sb-validations="required" />
+                <label for="estado">Estado<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="estado:required">Estado é obrigatório.</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="telefone_fixo1" id="telefoneFixo1" type="text" placeholder="Telefone Fixo 1" />
+                <label for="telefoneFixo1">Telefone Fixo 1</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="telefone_fixo2" id="telefoneFixo2" type="text" placeholder="Telefone Fixo 2" />
+                <label for="telefoneFixo2">Telefone Fixo 2</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="celular" id="celular" type="text" placeholder="Celular" data-sb-validations="required" />
+                <label for="celular">Celular<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="celular:required">Celular é obrigatório.</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="contato" id="contato" type="text" placeholder="Contato" />
+                <label for="contato">Contato</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="email" id="email" type="email" placeholder="Email*" data-sb-validations="required,email" />
+                <label for="email">Email<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="email:required">Email é obrigatório.</div>
+                <div class="invalid-feedback" data-sb-feedback="email:email">Email não é válido.</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label><b>Documentos</b></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="identidade" id="identidade" type="text" placeholder="Identidade*" data-sb-validations="required" />
+                <label for="identidade">Identidade<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="identidade:required">Identidade* é obrigatório.</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input class="form-control" name="cpf" id="cpf" type="text" placeholder="CPF*" data-sb-validations="required" />
+                <label for="cpf">CPF<span class="font-red">*</span></label>
+                <div class="invalid-feedback" data-sb-feedback="cpf:required">CPF* é obrigatório.</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <select class="form-select" name="possui_veiculo" id="possuiVeiculo" aria-label="Possui Veículo?">
+                  <option value="nao">Não</option>
+                  <option value="sim">Sim</option>
+                </select>
+                <label for="possuiVeiculo">Possui Veículo?</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <select class="form-select" name="habilitacao" id="habilitacao" aria-label="Habilitação?">
+                  <option value="nao">Não</option>
+                  <option value="sim">Sim</option>
+                  <option value="em-processo">Em processo</option>
+                </select>
+                <label for="habilitacao">Habilitação?</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center mb-3">
+                  <div class="fw-bolder">Dados enviado com sucesso!</div>
+                </div>
+              </div>
+              <div class="d-none" id="submitErrorMessage">
+                <div class="text-center text-danger mb-3">Erro ao enviar a mensagem!</div>
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar</button>
+              </div>
+            </div>
+          </div>
+        </form>
+    </div>
+    </div>
+  </main>
+  <footer>
+    <p class="footer">
+      JobsNET - Recrutamento e seleção de profissionais | 2021
+    </p>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <script src="https://cdn.startbootstrap.com/sb-forms-0.4.1.js"></script>
+  <script src="https://raw.githubusercontent.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
